@@ -589,6 +589,86 @@
                 </div>
             </div>
         </section>
+        <!--==================== CALC ====================-->
+        <section class="pricing section" id="pricing">
+            <div class="container">
+              <div class="section__data">
+                <div class="sectin__titles">
+                  <h1 class="section__title">SPECIAL PLAN</h1>
+                  <div class="currency-buttons">
+                    <button class="duration-btn active" data-duration="1">شهر</button>
+                    <button class="duration-btn" data-duration="3">3 شهور</button>
+                    <button class="duration-btn" data-duration="6">6 شهور</button>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="pricing__container grid">
+                <!-- SUPER PINK PLUS -->
+                <article class="pricing__card">
+                  <header class="pricing__header">
+                    <div class="pricing__shape">
+                      <img src="{% static 'assets/img/pricing1.png' %}" alt="" class="pricing__img">
+                    </div>
+                    <h1 class="pricing__title">SUPER PINK PLUS</h1>
+                    <h2 class="pricing__number" data-package="1"></h2>
+                  </header>
+                  <ul class="pricing__list">
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> 6 Days a Week</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> Customized Diet Plan</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> Full Training Program</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> Direct Follow-up With Female Coach</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> Weekly Progress Tracking</li>
+                  </ul>
+                  <a href="#" class="button button__flex pricing__button" style="background-color: pink;">
+                    <i class="ri-store-2-fill"></i>
+                  </a>
+                </article>
+          
+                <!-- SUPER PINK -->
+                <article class="pricing__card pricing__card-active">
+                  <header class="pricing__header">
+                    <div class="pricing__shape">
+                      <img src="{% static 'assets/img/pricing2.png' %}" alt="" class="pricing__img">
+                    </div>
+                    <h1 class="pricing__title">SUPER PINK</h1>
+                    <h2 class="pricing__number" data-package="2"></h2>
+                  </header>
+                  <ul class="pricing__list">
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> 5 Days a Week</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> Workout Routine</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> General Nutrition Plan</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> Female Coach Follow-up</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> Basic Progress Check</li>
+                  </ul>
+                  <a href="#" class="button button__flex pricing__button" style="background-color: pink;">
+                    <i class="ri-store-2-fill"></i>
+                  </a>
+                </article>
+          
+                <!-- BASIC PACKAGE -->
+                <article class="pricing__card">
+                  <header class="pricing__header">
+                    <div class="pricing__shape">
+                      <img src="{% static 'assets/img/pricing3.png' %}" alt="" class="pricing__img">
+                    </div>
+                    <h1 class="pricing__title">BASIC PACKAGE</h1>
+                    <h2 class="pricing__number" data-package="3"></h2>
+                  </header>
+                  <ul class="pricing__list">
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> 5 Days In A Week</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> 01 Sweatshirt</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> 01 Bottle of Protein</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> Access to Videos</li>
+                    <li class="pricing__item"><i class="ri-trophy-fill"></i> Muscle Stretching</li>
+                  </ul>
+                  <a href="#" class="button button__flex pricing__button">
+                    <i class="ri-store-2-fill"></i>
+                  </a>
+                </article>
+              </div>
+            </div>
+          </section>
     </main>
 
     <!--==================== FOOTER ====================-->
@@ -753,99 +833,95 @@
         });
     </script>
     <script src="https://app.embed.im/spark.js" defer></script>
-    {% comment %} <script>
-        document.addEventListener("DOMContentLoaded", async function () {
-            const paymentLinks = {
-                "EGP": {
-                    "package1": "https://app.fawaterk.com/paymentRequest/show/18645",
-                    "package2": "https://app.fawaterk.com/paymentRequest/show/18646",
-                    "package3": "https://app.fawaterk.com/paymentRequest/show/18647"
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currencyMenuBtn = document.getElementById('openCurrencyMenu');
+            const closeCurrencyBtn = document.getElementById('closeMenu');
+            const currencyMenu = document.getElementById('currencyMenu');
+            const menuItems = document.querySelectorAll('.menu-item');
+            const currentCurrencyEl = document.getElementById('currentCurrency');
+            const currentFlag = document.getElementById('currentFlag');
+            const durationButtons = document.querySelectorAll('.duration-btn');
+            const pricingNumbers = document.querySelectorAll('.pricing__number');
+        
+            const basePrices = {
+                'package1': { // SUPER PINK PLUS
+                    '1': { USD: 55, EGP: 1700, AED: 202, SAR: 206 },
+                    '3': { USD: 150, EGP: 4700, AED: 550, SAR: 565 },
+                    '6': { USD: 280, EGP: 8800, AED: 1030, SAR: 1055 }
                 },
-                "SAR": {
-                    "package1": "https://app.fawaterk.com/paymentRequest/show/18651",
-                    "package2": "https://app.fawaterk.com/paymentRequest/show/18652",
-                    "package3": "https://app.fawaterk.com/paymentRequest/show/18653"
+                'package2': { // SUPER PINK
+                    '1': { USD: 40, EGP: 1250, AED: 147, SAR: 150 },
+                    '3': { USD: 110, EGP: 3400, AED: 402, SAR: 410 },
+                    '6': { USD: 200, EGP: 6300, AED: 730, SAR: 745 }
                 },
-                "USD": {
-                    "package1": "https://app.fawaterk.com/paymentRequest/show/18648",
-                    "package2": "https://app.fawaterk.com/paymentRequest/show/18649",
-                    "package3": "https://app.fawaterk.com/paymentRequest/show/18650"
+                'package3': { // BASIC PACKAGE
+                    '1': { USD: 30, EGP: 950, AED: 110, SAR: 113 },
+                    '3': { USD: 85, EGP: 2600, AED: 310, SAR: 320 },
+                    '6': { USD: 160, EGP: 5000, AED: 580, SAR: 590 }
                 }
             };
         
-            const prices = {
-                "EGP": {
-                    "package1": "150 EGP",
-                    "package2": "980 EGP",
-                    "package3": "1503 EGP"
-                },
-                "USD": {
-                    "package1": "$55",
-                    "package2": "$97",
-                    "package3": "$39"
-                },
-                "SAR": {
-                    "package1": "66 SAR",
-                    "package2": "163 SAR",
-                    "package3": "79 SAR"
-                }
-            };
+            let selectedCurrency = 'USD';
+            let selectedDuration = '1';
         
-            const currencySelect = document.querySelector(".menu__select");
+            // Auto-detect currency based on country
+            fetch('https://ipinfo.io/json?token=5f01ba4857444e')
+                .then(res => res.json())
+                .then(data => {
+                    const currency = getCurrencyForCountry(data.country);
+                    setCurrency(currency);
+                });
         
-            async function detectLocationCurrency() {
-                try {
-                    const response = await fetch("https://ipapi.co/json/");
-                    const data = await response.json();
-                    const country = data.country_code;
-        
-                    if (country === "EG") return "EGP";
-                    if (country === "SA") return "SAR";
-                    return "USD";
-                } catch (error) {
-                    return "USD";
-                }
+            function getCurrencyForCountry(country) {
+                if (country === 'EG') return 'EGP';
+                if (country === 'AE') return 'AED';
+                if (country === 'SA') return 'SAR';
+                return 'USD';
             }
         
-            async function initializeCurrency() {
-                let savedCurrency = localStorage.getItem("selectedCurrency");
-        
-                if (!savedCurrency) {
-                    savedCurrency = await detectLocationCurrency();
-                    localStorage.setItem("selectedCurrency", savedCurrency);
-                    
-                    // إعادة تحميل الصفحة بعد تحديد العملة لأول مرة فقط
-                    location.reload();
-                    return;
-                }
-        
-                currencySelect.value = savedCurrency;
-                updatePackages();
-            }
-        
-            function updatePackages() {
-                const selectedCurrency = currencySelect.value;
-                localStorage.setItem("selectedCurrency", selectedCurrency);
-        
-                document.querySelectorAll(".menu__content").forEach(menuContent => {
-                    const packageType = menuContent.getAttribute("data-package");
-                    const button = menuContent.querySelector(".menu__button");
-                    const priceTag = menuContent.querySelector(".menu__preci");
-        
-                    if (paymentLinks[selectedCurrency] && paymentLinks[selectedCurrency][packageType]) {
-                        button.href = paymentLinks[selectedCurrency][packageType];
-                        priceTag.textContent = prices[selectedCurrency][packageType];
-                    } else {
-                        button.href = "#";
-                    }
+            function updatePrices() {
+                pricingNumbers.forEach((el, index) => {
+                    const packageKey = `package${index + 1}`;
+                    const price = basePrices[packageKey][selectedDuration][selectedCurrency];
+                    el.textContent = selectedCurrency === 'USD' ? `$${price}` : `${price} ${selectedCurrency}`;
                 });
             }
         
-            currencySelect.addEventListener("change", updatePackages);
-            await initializeCurrency();
-        });
+            function setCurrency(currency) {
+                selectedCurrency = currency;
+                currentCurrencyEl.textContent = currency;
+                currentFlag.innerHTML = `<img src="{% static 'assets/img/${currency.toLowerCase()}.png' %}" width="20">`;
+                updatePrices();
+            }
         
-    </script> {% endcomment %}
+            // Currency Menu
+            currencyMenuBtn?.addEventListener('click', () => currencyMenu.classList.add('show'));
+            closeCurrencyBtn?.addEventListener('click', () => currencyMenu.classList.remove('show'));
+        
+            menuItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const currency = item.getAttribute('data-currency');
+                    setCurrency(currency);
+                    currencyMenu.classList.remove('show');
+                });
+            });
+        
+            // Duration Buttons
+            durationButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    durationButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    selectedDuration = btn.getAttribute('data-duration');
+                    updatePrices();
+                });
+            });
+        
+            // Initial load
+            updatePrices();
+        });
+        </script>
+        
    
     
 </body>
