@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import json
 import requests
+from django.views.decorators.csrf import csrf_exempt
+
 
 def index(request):
     return render(request, 'accounts/index.html')
@@ -23,20 +25,15 @@ def package3(request):
     return render(request, 'accounts/package3.html')
 def package4(request):
     return render(request, 'accounts/package4.html')
-
-def paid_webhook(request):
-    if request.method == "POST":
-        try:
-            data = json.loads(request.body)
-            print("✅ Payment Data Received:", data)
-
-            payment_status = data.get("status")
-            if payment_status == "paid":
-                return JsonResponse({"redirect_url": "/form/"})
-        except json.JSONDecodeError:
-            return JsonResponse({"error": "Invalid JSON"}, status=400)
-
-    return JsonResponse({"status": "received"}, status=200)
+def email1(request):
+    return render(request, 'accounts/email1.html')
+@csrf_exempt
+def fawaterak_webhook(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        print("✅ Webhook data received:", data)
+        return JsonResponse({'status': 'received'})
+    return JsonResponse({'status': 'not allowed'}, status=405)
 
 # دالة للحصول على IP المستخدم الحقيقي
 def get_client_ip(request):

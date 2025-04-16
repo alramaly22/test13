@@ -396,7 +396,130 @@
                 <div class="swiper-pagination"></div>
             </div>
         </section>
-        <section class="testimonial section" id="testimonial" data-aos="fade-right">
+      
+        <div class="llpi">
+        <section class="menu section bd-container" id="menu">
+            <h2 class="section-title">Files without tracking</h2>
+        
+            <div class="menu__container bd-grid">
+                <div class="menu__content" data-package="package1">
+                    <img src="{% static 'assets/img/package/T.jpg' %}" alt="" class="menu__img">
+                    <h3 class="menu__name">package1</h3>
+                    <span class="menu__detail">gold package</span>
+                    <span class="menu__preci">$55</span>
+                    <a href="{% url 'package1' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
+                </div>
+        
+                <div class="menu__content" data-package="package2">
+                    <img src="{% static 'assets/img/package/TM.jpg' %}" alt="" class="menu__img">
+                    <h3 class="menu__name">package2</h3>
+                    <span class="menu__detail">silver package</span>
+                    <span class="menu__preci">$97</span>
+                    <a href="{% url 'package2' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
+                </div>
+        
+                <div class="menu__content" data-package="package3">
+                    <img src="{% static 'assets/img/package/TS.jpg' %}" alt="" class="menu__img">
+                    <h3 class="menu__name">package3</h3>
+                    <span class="menu__detail">bronze package</span>
+                    <span class="menu__preci">$39</span>
+                    <a href="{% url 'package3' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
+                </div>
+                <div class="menu__content" data-package="package3">
+                    <img src="{% static 'assets/img/package/W.jpg' %}" alt="" class="menu__img">
+                    <h3 class="menu__name">package3</h3>
+                    <span class="menu__detail">bronze package</span>
+                    <span class="menu__preci">$39</span>
+                    <a href="{% url 'package4' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        
+        <section class="books section" id="books">
+            <div class="container">
+              <h2 class="section__title">Featured Books from the Coach</h2>
+              <div class="books__grid grid">
+                <!-- Book 1 -->
+                <div class="book__card ">
+                  <div class="book__img-wrapper">
+                    <img src="{% static 'assets/img/book1.jpeg' %}" alt="Healthy Recipes Book" class="book__img" />
+                  </div>
+                  <div class="book__content">
+                    <h3 class="book__title">Healthy Recipes Book</h3>
+                    <p class="book__desc">Over 100 healthy and balanced recipes to support your transformation journey.</p>
+                    <span class="book__price">150 EGP</span>
+                    <button class="book__btn">📥 Buy Now</button>
+                  </div>
+                </div>
+          
+                <!-- Book 2 -->
+                <div class="book__card ">
+                  <div class="book__img-wrapper">
+                    <img src="{% static 'assets/img/book2.jpeg' %}" alt="Calories Guide Book" class="book__img" />
+                  </div>
+                  <div class="book__content">
+                    <h3 class="book__title">Calories Guide Book</h3>
+                    <p class="book__desc">A complete guide to calculating calories and organizing your diet accurately.</p>
+                    <span class="book__price">120 EGP</span>
+                    <button class="book__btn">📥 Buy Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+       
+        <!--==================== CALC ====================-->
+        <section class="nutrantion section " id="calc" data-aos="fade-right">
+            <div class="nutrantion__container grid container">
+                <img src="{% static 'assets/img/calc.png' %}" alt="" class="nutrantion__img">
+
+                <div class="nutrantion__data">
+                    <h2 class="section__title nutrantion__title">
+                        <p data-lang="nurationp1">DISCOVER YOUR </p>
+                        <p data-lang="nurationp2">CALORIE NEEDS</p>
+                    </h2>
+
+                    <p data-lang="nurationp3" class="nutrantion__description">
+                        Discover your daily calorie needs effortlessly with our exclusive calculator. Simply enter your age, weight, and height to get started. This tool is a gift from Coach Wasim to help you stay on track with your nutrition goals.
+                    </p>
+
+                    <div class="nutrantion__details">
+                        <div class="fle">
+                            <p class="nutrantion__details-description nutrantion__details-icon">
+                                <i class="ri-cake-3-line"></i>
+                                <p class="nutrantion__details-description nutrantion__details-icon" data-lang="nurationp11">Find out how many calories you need daily.</p>
+                            </p>
+                        </div>
+                        <div class="fle">
+                            <p class="nutrantion__details-description nutrantion__details-icon">
+                                <i class="ri-clipboard-fill"></i>
+                                <p class="nutrantion__details-description nutrantion__details-icon" data-lang="nurationp12"> Enter your age, weight, and height.</p>
+                            </p>
+                        </div>
+                        <div class="fle">
+                            <p class="nutrantion__details-description nutrantion__details-icon">
+                                <i class="ri-restaurant-fill"></i>
+                                <p class="nutrantion__details-description nutrantion__details-icon" data-lang="nurationp13">Personalized results for your goals.</p>
+                            </p>
+                        </div>
+                        <div class="fle">
+                            <p class="nutrantion__details-description nutrantion__details-icon">
+                                <i class="ri-restaurant-fill"></i>
+                                <p class="nutrantion__details-description nutrantion__details-icon" data-lang="nurationp13">Personalized results for your goals.</p>
+                            </p>
+                        </div>
+                    </div>
+
+                    <a href="{% url 'test2' %}" class="button">
+                        <p data-lang="button">Get Start</p> <i class="ri-arrow-right-down-line button__icon"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: transparent;" class="testimonial section" id="testimonial" data-aos="fade-right">
             <h2 class="section__title">
                 Testimonial
             </h2>
@@ -503,94 +626,8 @@
                 </div>
             </div>
         </section>
-
-        <section class="menu section bd-container" id="menu">
-            <h2 class="section-title">Files without tracking</h2>
-        
-            <div class="menu__container bd-grid">
-                <div class="menu__content" data-package="package1">
-                    <img src="{% static 'assets/img/package/T.jpg' %}" alt="" class="menu__img">
-                    <h3 class="menu__name">package1</h3>
-                    <span class="menu__detail">gold package</span>
-                    <span class="menu__preci">$55</span>
-                    <a href="{% url 'package1' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
-                </div>
-        
-                <div class="menu__content" data-package="package2">
-                    <img src="{% static 'assets/img/package/TM.jpg' %}" alt="" class="menu__img">
-                    <h3 class="menu__name">package2</h3>
-                    <span class="menu__detail">silver package</span>
-                    <span class="menu__preci">$97</span>
-                    <a href="{% url 'package2' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
-                </div>
-        
-                <div class="menu__content" data-package="package3">
-                    <img src="{% static 'assets/img/package/TS.jpg' %}" alt="" class="menu__img">
-                    <h3 class="menu__name">package3</h3>
-                    <span class="menu__detail">bronze package</span>
-                    <span class="menu__preci">$39</span>
-                    <a href="{% url 'package3' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
-                </div>
-                <div class="menu__content" data-package="package3">
-                    <img src="{% static 'assets/img/package/W.jpg' %}" alt="" class="menu__img">
-                    <h3 class="menu__name">package3</h3>
-                    <span class="menu__detail">bronze package</span>
-                    <span class="menu__preci">$39</span>
-                    <a href="{% url 'package4' %}" class="button menu__button"><i class="ri-shopping-basket-line"></i></a>
-                </div>
-            </div>
-        </section>
-        
         <!--==================== CALC ====================-->
-        <section class="nutrantion section " id="calc" data-aos="fade-right">
-            <div class="nutrantion__container grid container">
-                <img src="{% static 'assets/img/calc.png' %}" alt="" class="nutrantion__img">
-
-                <div class="nutrantion__data">
-                    <h2 class="section__title nutrantion__title">
-                        <p data-lang="nurationp1">DISCOVER YOUR </p>
-                        <p data-lang="nurationp2">CALORIE NEEDS</p>
-                    </h2>
-
-                    <p data-lang="nurationp3" class="nutrantion__description">
-                        Discover your daily calorie needs effortlessly with our exclusive calculator. Simply enter your age, weight, and height to get started. This tool is a gift from Coach Wasim to help you stay on track with your nutrition goals.
-                    </p>
-
-                    <div class="nutrantion__details">
-                        <div class="fle">
-                            <p class="nutrantion__details-description nutrantion__details-icon">
-                                <i class="ri-cake-3-line"></i>
-                                <p class="nutrantion__details-description nutrantion__details-icon" data-lang="nurationp11">Find out how many calories you need daily.</p>
-                            </p>
-                        </div>
-                        <div class="fle">
-                            <p class="nutrantion__details-description nutrantion__details-icon">
-                                <i class="ri-clipboard-fill"></i>
-                                <p class="nutrantion__details-description nutrantion__details-icon" data-lang="nurationp12"> Enter your age, weight, and height.</p>
-                            </p>
-                        </div>
-                        <div class="fle">
-                            <p class="nutrantion__details-description nutrantion__details-icon">
-                                <i class="ri-restaurant-fill"></i>
-                                <p class="nutrantion__details-description nutrantion__details-icon" data-lang="nurationp13">Personalized results for your goals.</p>
-                            </p>
-                        </div>
-                        <div class="fle">
-                            <p class="nutrantion__details-description nutrantion__details-icon">
-                                <i class="ri-restaurant-fill"></i>
-                                <p class="nutrantion__details-description nutrantion__details-icon" data-lang="nurationp13">Personalized results for your goals.</p>
-                            </p>
-                        </div>
-                    </div>
-
-                    <a href="{% url 'test2' %}" class="button">
-                        <p data-lang="button">Get Start</p> <i class="ri-arrow-right-down-line button__icon"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!--==================== CALC ====================-->
-        <section class="pricing section" id="pricing">
+        {% comment %} <section class="pricing section" id="pricing">
             <div class="container">
               <div class="section__data">
                 <div class="sectin__titles">
@@ -668,7 +705,9 @@
                 </article>
               </div>
             </div>
-          </section>
+          </section> {% endcomment %}
+       
+          
     </main>
 
     <!--==================== FOOTER ====================-->
@@ -833,7 +872,7 @@
         });
     </script>
     <script src="https://app.embed.im/spark.js" defer></script>
-    <script>
+    {% comment %} <script>
         document.addEventListener('DOMContentLoaded', () => {
             const currencyMenuBtn = document.getElementById('openCurrencyMenu');
             const closeCurrencyBtn = document.getElementById('closeMenu');
@@ -920,7 +959,7 @@
             // Initial load
             updatePrices();
         });
-        </script>
+        </script> {% endcomment %}
         
    
     
